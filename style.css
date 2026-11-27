@@ -1,0 +1,322 @@
+:root {
+    --bg-color: #000000; /* Fundo Preto Puro */
+    --text-color: #d4d4d4; /* Cinza claro para leitura */
+    --accent-white: #ffffff; /* Branco Puro para destaques */
+    --card-bg: #0a0a0a; /* Preto levemente acinzentado para os cards */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace; /* Fonte estilo terminal */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Canvas Matrix */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.20;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #333;
+    position: relative; /* Mudado de sticky para relative para evitar bug de duplicação visual */
+    z-index: 100;
+}
+
+.logo {
+    height: 60px;
+    border-radius: 50%;
+    filter: grayscale(100%); /* Deixa a logo P&B caso tenha cor */
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 30px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-white);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.btn-neon {
+    border: 1px solid var(--accent-white);
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: var(--accent-white) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.btn-neon:hover {
+    background: var(--accent-white);
+    color: #000 !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 7rem;
+    letter-spacing: 8px;
+    color: var(--accent-white);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.typing-text {
+    margin-bottom: 40px;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* Sections */
+.section {
+    padding: 100px 50px;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid #111;
+}
+
+.section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--accent-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: var(--accent-white);
+    margin: 15px auto 0;
+    box-shadow: 0 0 10px var(--accent-white);
+}
+
+/* Grid Metodologia */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 5px;
+    border-left: 3px solid #555;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-left: 3px solid var(--accent-white);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+.card h3 {
+    color: var(--accent-white);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+/* Fundadores */
+.founders-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+
+.founder-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    filter: grayscale(100%); /* Deixa a bandeira P&B */
+    transition: filter 0.5s;
+}
+
+.founder-image img:hover {
+    filter: grayscale(0%); /* Volta a cor original ao passar o mouse */
+}
+
+.founder-text {
+    max-width: 500px;
+}
+
+.founder-text h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-white);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.founder-text p {
+    line-height: 1.8;
+    color: #bbb;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.founder-text ul {
+    list-style: none;
+}
+
+.founder-text li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #eee;
+}
+
+.founder-text span {
+    color: var(--accent-white);
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #222;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-logo {
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+
+footer p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--accent-white);
+    font-size: 1.2rem;
+    margin: 20px 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    margin-top: 30px;
+    color: #444;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+    }
+    .hero-content h1 {
+        font-size: 4rem;
+        letter-spacing: 4px;
+    }
+    .section {
+        padding: 60px 20px;
+    }
+}
+/* Botão de Áudio Fantasma */
+.audio-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    color: #1a1a1a; /* Cinza quase preto (invisível no fundo) */
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem; /* Fonte menor */
+    z-index: 999;
+    opacity: 0.4; /* Quase transparente */
+    transition: all 0.4s ease;
+}
+
+/* Quando o usuário passa o mouse, ele aparece e brilha */
+.audio-btn:hover {
+    opacity: 1;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1); /* Dá um leve aumentada */
+}
+
+/* Estado de mudo (caso queira que ele fique levemente visível quando mutado) */
+.audio-btn.muted {
+    color: #111; /* Continua invisível */
+}
+
+.audio-btn.muted:hover {
+    color: #888; /* Se passar o mouse mutado, fica cinza */
+}
