@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Canvas Matrix */
+
 #matrix-canvas {
     position: fixed;
     top: 0;
@@ -29,7 +29,7 @@ body {
     opacity: 0.20;
 }
 
-/* Navbar */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -79,7 +79,7 @@ nav a:hover {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Hero */
+
 .hero {
     height: 90vh;
     display: flex;
@@ -111,7 +111,7 @@ nav a:hover {
     font-size: 1.2rem;
 }
 
-/* Sections */
+
 .section {
     padding: 100px 50px;
     position: relative;
@@ -139,7 +139,7 @@ nav a:hover {
     box-shadow: 0 0 10px var(--accent-white);
 }
 
-/* Grid Metodologia */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -174,7 +174,7 @@ nav a:hover {
     color: #aaa;
 }
 
-/* Fundadores */
+
 .founders-container {
     display: flex;
     flex-wrap: wrap;
@@ -231,7 +231,7 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* Footer */
+
 footer {
     background: #000;
     text-align: center;
@@ -266,7 +266,7 @@ footer p {
     color: #444;
 }
 
-/* Responsivo */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
