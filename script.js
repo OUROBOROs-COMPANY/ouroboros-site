@@ -1,4 +1,4 @@
-// 1. Efeito de Digitação
+
 const textElement = document.querySelector('.typing-text');
 const text = "Ordem Universal de Ruptura e Obfuscação...";
 let index = 0;
@@ -13,14 +13,14 @@ function typeText() {
             textElement.textContent = "";
             index = 0;
             typeText();
-        }, 3000); // Pausa antes de reiniciar
+        }, 3000); 
     }
 }
-// Limpa o texto inicial para começar a digitar
+
 textElement.textContent = "";
 typeText();
 
-// 2. Efeito Matrix (Chuva de código no fundo)
+
 const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -37,7 +37,7 @@ for (let x = 0; x < columns; x++) {
 }
 
 function drawMatrix() {
-    // Fundo preto com opacidade para criar o rastro
+
     ctx.fillStyle = "rgba(5, 5, 5, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -57,17 +57,17 @@ function drawMatrix() {
 
 setInterval(drawMatrix, 35);
 
-// Ajusta o canvas ao redimensionar a tela
+
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
-// --- Controle de Áudio ---
+
 const audio = document.getElementById('bg-music');
 const audioBtn = document.getElementById('audio-control');
 const audioIcon = document.getElementById('audio-icon');
 
-// Define o volume inicial (0.0 a 1.0)
+
 audio.volume = 0.2;
 
 let isPlaying = false;
@@ -89,8 +89,8 @@ audioBtn.addEventListener('click', () => {
     }
 });
 
-// Tenta tocar o áudio no primeiro clique em QUALQUER lugar do site
-// (Isso contorna a regra de autoplay dos navegadores de forma limpa)
+
+
 document.body.addEventListener('click', function playOnFirstClick() {
     if (!isPlaying) {
         audio.play().then(() => {

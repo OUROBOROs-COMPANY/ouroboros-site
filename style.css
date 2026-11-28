@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #000000; /* Fundo Preto Puro */
-    --text-color: #d4d4d4; /* Cinza claro para leitura */
-    --accent-white: #ffffff; /* Branco Puro para destaques */
-    --card-bg: #0a0a0a; /* Preto levemente acinzentado para os cards */
+    --bg-color: #000000; 
+    --text-color: #d4d4d4; 
+    --accent-white: #ffffff; 
+    --card-bg: #0a0a0a; 
 }
 
 * {
@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: 'Share Tech Mono', monospace; /* Fonte estilo terminal */
+    font-family: 'Share Tech Mono', monospace; 
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
@@ -37,14 +37,14 @@ header {
     padding: 20px 50px;
     background: rgba(0, 0, 0, 0.9);
     border-bottom: 1px solid #333;
-    position: relative; /* Mudado de sticky para relative para evitar bug de duplicação visual */
+    position: relative; 
     z-index: 100;
 }
 
 .logo {
     height: 60px;
     border-radius: 50%;
-    filter: grayscale(100%); /* Deixa a logo P&B caso tenha cor */
+    filter: grayscale(100%); 
 }
 
 nav a {
@@ -189,12 +189,12 @@ nav a:hover {
     border-radius: 5px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     border: 1px solid #333;
-    filter: grayscale(100%); /* Deixa a bandeira P&B */
+    filter: grayscale(100%); 
     transition: filter 0.5s;
 }
 
 .founder-image img:hover {
-    filter: grayscale(0%); /* Volta a cor original ao passar o mouse */
+    filter: grayscale(0%); 
 }
 
 .founder-text {
@@ -287,36 +287,36 @@ footer p {
         padding: 60px 20px;
     }
 }
-/* Botão de Áudio Fantasma */
+
 .audio-btn {
     position: fixed;
     bottom: 15px;
     right: 15px;
-    background: transparent; /* Fundo transparente */
-    border: none; /* Sem borda */
-    color: #1a1a1a; /* Cinza quase preto (invisível no fundo) */
+    background: transparent; 
+    border: none; 
+    color: #1a1a1a; 
     padding: 10px;
     cursor: pointer;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.9rem; /* Fonte menor */
+    font-size: 0.9rem; 
     z-index: 999;
-    opacity: 0.4; /* Quase transparente */
+    opacity: 0.4; 
     transition: all 0.4s ease;
 }
 
-/* Quando o usuário passa o mouse, ele aparece e brilha */
+
 .audio-btn:hover {
     opacity: 1;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    transform: scale(1.1); /* Dá um leve aumentada */
+    transform: scale(1.1); 
 }
 
-/* Estado de mudo (caso queira que ele fique levemente visível quando mutado) */
+
 .audio-btn.muted {
-    color: #111; /* Continua invisível */
+    color: #111; 
 }
 
 .audio-btn.muted:hover {
-    color: #888; /* Se passar o mouse mutado, fica cinza */
+    color: #888; 
 }
